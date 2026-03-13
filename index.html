@@ -20,9 +20,9 @@
   header {
     display: flex;
     width: 100%;
-    background: #462106;  
+    background: #462106;
     color: #FFE0BA;
-    height: 200px;        
+    height: 200px;
     align-items: center;
   }
 
@@ -98,12 +98,21 @@
     border-radius: 10px;
   }
 
-  a {
+  /* --- LINK-FARBEN KORRIGIERT --- */
+
+  /* Standard: Links im Content (heller Hintergrund) */
+  .container a {
+    color: #462106;
+    text-decoration: underline;
+  }
+
+  /* Links in dunklen Bereichen */
+  .project a, footer a, header a {
     color: #FFE0BA;
     text-decoration: none;
   }
 
-  a:hover {
+  .project a:hover, footer a:hover, header a:hover {
     text-decoration: underline;
   }
 
@@ -131,10 +140,12 @@
   }
 </style>
 </head>
+
 <body>
 
 <header>
-  <img src="profil.png" alt="Profilfoto Engelbert Schwank">
+  <!-- FOTO-FIX: Dateiname muss exakt passen -->
+  <img src="foto-esc.png" alt="Profilfoto Engelbert Schwank">
   <div class="header-text">
     <h1>Engelbert Schwank</h1>
     <p>IT-Spezialist / Bewerbungsseite</p>
@@ -173,50 +184,36 @@
     <h3>Projekt 3 – Datenanalyse</h3>
     <p>Python-Skript zur Analyse von Verkaufsdaten und Visualisierung.</p>
   </div>
-  <div class="project">
-    <h3>Projekt 4 – Blog System</h3>
-    <p>Content-Management-System mit Node.js und MongoDB.</p>
-  </div>
-  <div class="project">
-    <h3>Projekt 5 – Mobile App</h3>
-    <p>Cross-Plattform-App mit React Native zur Organisation von Terminen.</p>
-  </div>
-  <div class="project">
-    <h3>Projekt 6 – API Entwicklung</h3>
-    <p>Entwicklung einer REST API für ein internes Verwaltungssystem.</p>
-  </div>
-  <div class="project">
-    <h3>Projekt 7 – Automatisierung</h3>
-    <p>Automatisierung von wiederkehrenden Aufgaben mit Python-Skripten.</p>
-  </div>
 </section>
 
 <section>
   <h2>Zeugnisse</h2>
   <div class="project">
-    <p><a href="#" target="_blank">Schul-/Studienzeugnisse ansehen oder herunterladen</a></p>
+    <p><a href="#" target="_blank" rel="noopener">Schul-/Studienzeugnisse ansehen oder herunterladen</a></p>
   </div>
 </section>
 
 <section>
   <h2>Dienstzeugnisse</h2>
   <div class="project">
-    <p><a href="#" target="_blank">Dienstzeugnisse ansehen oder herunterladen</a></p>
+    <p><a href="#" target="_blank" rel="noopener">Dienstzeugnisse ansehen oder herunterladen</a></p>
   </div>
 </section>
 
 <section>
   <h2>Kontakt</h2>
   <p>Email: <a href="mailto:engelbert.schwank@gmx.at">engelbert.schwank@gmx.at</a></p>
-  <p>LinkedIn: <a href="#" target="_blank">Profil-Link</a></p>
-  <p>GitHub: <a href="#" target="_blank">Profil-Link</a></p>
+  <p>LinkedIn: <a href="#" target="_blank" rel="noopener">Profil-Link</a></p>
+  <p>GitHub: <a href="#" target="_blank" rel="noopener">Profil-Link</a></p>
 </section>
 
 </div>
 
 <footer>
-  © 2026 Engelbert Schwank | Email: <a href="mailto:engelbert.schwank@gmx.at">engelbert.schwank@gmx.at</a>
+  © 2026 Engelbert Schwank | Email:
+  <a href="mailto:engelbert.schwank@gmx.at">engelbert.schwank@gmx.at</a>
 </footer>
 
 </body>
 </html>
+``
