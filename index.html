@@ -6,16 +6,6 @@
   <title>Engelbert Schwank - Bewerbungsseite</title>
 
   <style>
-    :root{
-      /* "Fluid" Werte: passen sich automatisch an */
-      --pad-x: clamp(16px, 3vw, 24px);
-      --pad-y: clamp(14px, 2.2vw, 22px);
-      --h1-size: clamp(28px, 3.2vw, 40px);
-      --btn-pad-y: clamp(8px, 1.4vw, 10px);
-      --btn-pad-x: clamp(14px, 2vw, 20px);
-      --gap: clamp(8px, 1.6vw, 12px);
-    }
-
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -23,54 +13,58 @@
       color: #462106;      /* dunkelbraun */
     }
 
-    /* HEADER: flexibel (keine fixe Höhe!) */
+    /* Header: Text links, Bild rechts */
     header {
       display: flex;
-      justify-content: flex-start;
+      justify-content: space-between;
       align-items: center;
-
       width: 100%;
       background: #462106;
       color: #FFE0BA;
-
-      /* statt height: 200px -> automatisch */
-      padding: var(--pad-y) var(--pad-x);
+      padding: 5px 20px;  /* deutlich weniger vertikal = schmalerer Header */
       box-sizing: border-box;
-
-      /* kleiner optischer Abstand nach unten */
-      border-bottom: 0;
+      min-height: 80px;   /* geringere Mindesthöhe */
     }
 
     header .header-text {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: var(--gap);
-      max-width: 100%;
+      max-width: 70%;
     }
 
     header .header-text h1 {
       margin: 0;
-      font-size: var(--h1-size);
+      font-size: 36px;    /* etwas kleiner für schmaleren Header */
       line-height: 1.1;
     }
 
     header .header-text .button {
       display: inline-block;
-      padding: var(--btn-pad-y) var(--btn-pad-x);
+      padding: 6px 14px;   /* kleinerer Button */
       background: #FFE0BA;
       color: #462106;
       text-decoration: none;
       border-radius: 6px;
       font-weight: bold;
       width: fit-content;
+      margin-top: 6px;
       transition: all 0.3s ease;
+      font-size: 14px;
     }
 
     header .header-text .button:hover {
       background: #fff1dd;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       transform: translateY(-2px);
+    }
+
+    /* Header-Bild: immer proportional zur Header-Höhe */
+    header .header-image img {
+      height: 80%;       /* Bildhöhe = 80% der Header-Höhe */
+      width: auto;       /* proportional */
+      object-fit: contain;
+      display: block;
     }
 
     .container {
@@ -82,6 +76,12 @@
 
     section {
       margin-bottom: 50px;
+    }
+
+    /* Über mich: Blocksatz */
+    section:first-of-type p {
+      text-align: justify;
+      text-justify: inter-word;
     }
 
     h2 {
@@ -125,15 +125,28 @@
       color: #FFE0BA;
     }
 
-    /* Mobile: bleibt flexibel, zentriert sauber */
+    /* Responsive für kleine Bildschirme */
     @media (max-width: 600px) {
       header {
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
         text-align: center;
+        padding: 5px 20px;
       }
 
       header .header-text {
+        max-width: 100%;
+        padding: 5px 0;
         align-items: center;
+      }
+
+      header .header-text h1 {
+        font-size: 28px;
+      }
+
+      header .header-image img {
+        height: 60%; /* kleineres Bild auf Mobile */
+        margin-top: 10px;
       }
     }
   </style>
@@ -146,6 +159,9 @@
       <h1>Engelbert Schwank</h1>
       <a class="button" href="#">Lebenslauf herunterladen</a>
     </div>
+    <div class="header-image">
+      <img src="Foto.png" alt="Foto von Engelbert Schwank">
+    </div>
   </header>
 
   <div class="container">
@@ -153,18 +169,18 @@
     <section>
       <h2>Über mich</h2>
       <p>
-        Ich bin IT-Spezialist mit Fokus auf moderne Webtechnologien.
-        Ich liebe es, benutzerfreundliche Anwendungen zu entwickeln und kreative Lösungen zu finden.
-      </p>
+        Verantwortung ist für mich nicht der Position geschuldet, sondern der Aufgabe, Organisationen nachhaltig weiterzuentwickeln -
+        ohne den Blick für Menschen oder Zahlen zu verlieren. Dabei verbinde ich unternehmerisches Denken mit Hands on Mentalität.
+       </p>
     </section>
 
     <section>
       <h2>Fähigkeiten</h2>
       <div class="skills">
-        <div style="width: 90%;">HTML / CSS</div>
-        <div style="width: 80%;">JavaScript / React</div>
-        <div style="width: 70%;">Python</div>
-        <div style="width: 60%;">Datenbanken / SQL</div>
+        <div style="width: 95%;">Projekt-, Budget- und Mitarbeiterverantwortung</div>
+        <div style="width: 88%;">Organisationsentwicklung und Prozessoptimierung</div>
+        <div style="width: 80%;">Qualitätsmanagement und Qualitätssysteme</div>
+        <div style="width: 75%;">Digitalisierung</div>
       </div>
     </section>
 
@@ -211,22 +227,22 @@
     <section>
       <h2>Zeugnisse</h2>
       <div class="project">
-        <p><a href="#" target="_blank">Schul-/Studienzeugnisse ansehen oder herunterladen</a></p>
+        <p><a href="#" target="_blank" rel="noopener">Schul-/Studienzeugnisse ansehen oder herunterladen</a></p>
       </div>
     </section>
 
     <section>
       <h2>Dienstzeugnisse</h2>
       <div class="project">
-        <p><a href="#" target="_blank">Dienstzeugnisse ansehen oder herunterladen</a></p>
+        <p><a href="#" target="_blank" rel="noopener">Dienstzeugnisse ansehen oder herunterladen</a></p>
       </div>
     </section>
 
     <section>
       <h2>Kontakt</h2>
       <p>Email: engelbert@gmx.at</p>
-      <p>LinkedIn: <a href="#" target="_blank">Profil-Link</a></p>
-      <p>GitHub: <a href="#" target="_blank">Profil-Link</a></p>
+      <p>LinkedIn: <a href="#" target="_blank" rel="noopener">Profil-Link</a></p>
+      <p>GitHub: <a href="#" target="_blank" rel="noopener">Profil-Link</a></p>
     </section>
 
   </div>
