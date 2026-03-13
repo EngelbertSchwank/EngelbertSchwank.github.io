@@ -9,11 +9,10 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #FFE0BA; /* hellbraun */
-      color: #462106;      /* dunkelbraun */
+      background: #FFE0BA;
+      color: #462106;
     }
 
-    /* Header: kompakt, Name groß, Foto klein & an Header angepasst */
     header {
       display: flex;
       justify-content: space-between;
@@ -22,11 +21,10 @@
       background: #462106;
       color: #FFE0BA;
 
-      /* kompakter Header (flexibel, keine fixe Höhe) */
-      padding: clamp(6px, 1.1vw, 10px) clamp(12px, 2vw, 18px);
-      box-sizing: border-box;
+      /* Mehr Platz oben und unten */
+      padding: clamp(12px, 1.8vw, 18px) clamp(12px, 2vw, 18px);
 
-      /* wichtig: nichts erzwingen, damit er nicht zu hoch wird */
+      box-sizing: border-box;
       min-height: 0;
     }
 
@@ -34,22 +32,16 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-
-      /* weniger vertikaler Abstand */
       gap: clamp(2px, 0.6vw, 6px);
-
-      /* damit Name/Button nicht vom Foto zerdrückt werden */
       max-width: 78%;
     }
 
-    /* Name: deutlich größer, aber responsive */
     header .header-text h1 {
       margin: 0;
       font-size: clamp(34px, 3.8vw, 56px);
       line-height: 1.0;
     }
 
-    /* Button: kompakt */
     header .header-text .button {
       display: inline-block;
       padding: 5px 12px;
@@ -77,15 +69,11 @@
       flex: 0 0 auto;
     }
 
-    /* Foto klein halten, ohne Header "aufzublasen" */
     header .header-image img {
       display: block;
       height: auto;
       width: auto;
-
-      /* Schlüssel: Foto bleibt klein und skaliert mit Viewport */
       max-height: clamp(38px, 5.2vw, 64px);
-
       border-radius: 6px;
       object-fit: contain;
     }
@@ -101,7 +89,6 @@
       margin-bottom: 50px;
     }
 
-    /* Über mich: Blocksatz */
     section:first-of-type p {
       text-align: justify;
       text-justify: inter-word;
@@ -130,6 +117,12 @@
       padding: 20px;
       margin-top: 15px;
       border-radius: 10px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 12px rgba(0,0,0,0.25);
     }
 
     a {
@@ -148,12 +141,11 @@
       color: #FFE0BA;
     }
 
-    /* Responsive: kompakt, Name groß, Foto noch kleiner */
     @media (max-width: 600px) {
       header {
-        flex-direction: row;   /* bleibt in einer Zeile -> kompakter */
+        flex-direction: row;
         align-items: center;
-        padding: 8px 12px;
+        padding: 12px;
       }
 
       header .header-text {
@@ -174,102 +166,102 @@
 
 <body>
 
-  <header>
-    <div class="header-text">
-      <h1>Engelbert Schwank</h1>
-      <a class="button" href="#">Lebenslauf herunterladen</a>
-    </div>
-    <div class="header-image">
-      <img src="Foto.png" alt="Foto von Engelbert Schwank">
-    </div>
-  </header>
+<header>
+  <div class="header-text">
+    <h1>Engelbert Schwank</h1>
+    <a class="button" href="#">Lebenslauf herunterladen</a>
+  </div>
+  <div class="header-image">
+    <img src="Foto.png" alt="Foto von Engelbert Schwank">
+  </div>
+</header>
 
-  <div class="container">
+<div class="container">
 
-    <section>
-      <h2>Über mich</h2>
-      <p>
-        Verantwortung ist für mich nicht der Position geschuldet, sondern der Aufgabe, Organisationen nachhaltig weiterzuentwickeln –
-        ohne den Blick für Menschen oder Zahlen zu verlieren. Dabei verbinde ich unternehmerisches Denken mit Hands-on-Mentalität.
-      </p>
-    </section>
+<section>
+  <h2>Über mich</h2>
+  <p>
+    Verantwortung ist für mich nicht der Position geschuldet, sondern der Aufgabe, Organisationen nachhaltig weiterzuentwickeln –
+    ohne den Blick für Menschen oder Zahlen zu verlieren. Dabei verbinde ich unternehmerisches Denken mit Hands-on-Mentalität.
+  </p>
+</section>
 
-    <section>
-      <h2>Fähigkeiten</h2>
-      <div class="skills">
-        <div style="width: 95%;">Projekt-, Budget- und Mitarbeiterverantwortung</div>
-        <div style="width: 88%;">Organisationsentwicklung und Prozessoptimierung</div>
-        <div style="width: 80%;">Qualitätsmanagement und Qualitätssysteme</div>
-        <div style="width: 75%;">Digitalisierung</div>
-      </div>
-    </section>
+<section>
+  <h2>Fähigkeiten</h2>
+  <div class="skills">
+    <div style="width: 95%;">Projekt-, Budget- und Mitarbeiterverantwortung</div>
+    <div style="width: 88%;">Organisationsentwicklung und Prozessoptimierung</div>
+    <div style="width: 80%;">Qualitätsmanagement und Qualitätssysteme</div>
+    <div style="width: 75%;">Digitalisierung</div>
+  </div>
+</section>
 
-    <section>
-      <h2>Projekte</h2>
+<section>
+  <h2>Projekte</h2>
 
-      <div class="project">
-        <h3>Projekt 1 – Portfolio Website</h3>
-        <p>Moderne Portfolio-Website, komplett in HTML, CSS und JavaScript umgesetzt.</p>
-      </div>
-
-      <div class="project">
-        <h3>Projekt 2 – Web App</h3>
-        <p>Webanwendung zur Aufgabenverwaltung mit React und Firebase.</p>
-      </div>
-
-      <div class="project">
-        <h3>Projekt 3 – Datenanalyse</h3>
-        <p>Python-Skript zur Analyse von Verkaufsdaten und Visualisierung.</p>
-      </div>
-
-      <div class="project">
-        <h3>Projekt 4 – Blog System</h3>
-        <p>Content-Management-System mit Node.js und MongoDB.</p>
-      </div>
-
-      <div class="project">
-        <h3>Projekt 5 – Mobile App</h3>
-        <p>Cross-Plattform-App mit React Native zur Organisation von Terminen.</p>
-      </div>
-
-      <div class="project">
-        <h3>Projekt 6 – API Entwicklung</h3>
-        <p>Entwicklung einer REST API für ein internes Verwaltungssystem.</p>
-      </div>
-
-      <div class="project">
-        <h3>Projekt 7 – Automatisierung</h3>
-        <p>Automatisierung von wiederkehrenden Aufgaben mit Python-Skripten.</p>
-      </div>
-
-    </section>
-
-    <section>
-      <h2>Zeugnisse</h2>
-      <div class="project">
-        <p><a href="#" target="_blank" rel="noopener">Schul-/Studienzeugnisse ansehen oder herunterladen</a></p>
-      </div>
-    </section>
-
-    <section>
-      <h2>Dienstzeugnisse</h2>
-      <div class="project">
-        <p><a href="#" target="_blank" rel="noopener">Dienstzeugnisse ansehen oder herunterladen</a></p>
-      </div>
-    </section>
-
-    <section>
-      <h2>Kontakt</h2>
-      <p>Email: engelbert@gmx.at</p>
-      <p>LinkedIn: <a href="#" target="_blank" rel="noopener">Profil-Link</a></p>
-      <p>GitHub: <a href="#" target="_blank" rel="noopener">Profil-Link</a></p>
-    </section>
-
+  <div class="project">
+    <h3>Projekt 1 – Portfolio Website</h3>
+    <p>Moderne Portfolio-Website, komplett in HTML, CSS und JavaScript umgesetzt.</p>
   </div>
 
-  <footer>
-    © 2026 Engelbert Schwank | Email: engelbert@gmx.at
-  </footer>
+  <div class="project">
+    <h3>Projekt 2 – Web App</h3>
+    <p>Webanwendung zur Aufgabenverwaltung mit React und Firebase.</p>
+  </div>
+
+  <div class="project">
+    <h3>Projekt 3 – Datenanalyse</h3>
+    <p>Python-Skript zur Analyse von Verkaufsdaten und Visualisierung.</p>
+  </div>
+
+  <div class="project">
+    <h3>Projekt 4 – Blog System</h3>
+    <p>Content-Management-System mit Node.js und MongoDB.</p>
+  </div>
+
+  <div class="project">
+    <h3>Projekt 5 – Mobile App</h3>
+    <p>Cross-Plattform-App mit React Native zur Organisation von Terminen.</p>
+  </div>
+
+  <div class="project">
+    <h3>Projekt 6 – API Entwicklung</h3>
+    <p>Entwicklung einer REST API für ein internes Verwaltungssystem.</p>
+  </div>
+
+  <div class="project">
+    <h3>Projekt 7 – Automatisierung</h3>
+    <p>Automatisierung von wiederkehrenden Aufgaben mit Python-Skripten.</p>
+  </div>
+
+</section>
+
+<section>
+  <h2>Zeugnisse</h2>
+  <div class="project">
+    <p><a href="#" target="_blank" rel="noopener">Schul-/Studienzeugnisse ansehen oder herunterladen</a></p>
+  </div>
+</section>
+
+<section>
+  <h2>Dienstzeugnisse</h2>
+  <div class="project">
+    <p><a href="#" target="_blank" rel="noopener">Dienstzeugnisse ansehen oder herunterladen</a></p>
+  </div>
+</section>
+
+<section>
+  <h2>Kontakt</h2>
+  <p>Email: engelbert@gmx.at</p>
+  <p>LinkedIn: <a href="#" target="_blank" rel="noopener">Profil-Link</a></p>
+  <p>GitHub: <a href="#" target="_blank" rel="noopener">Profil-Link</a></p>
+</section>
+
+</div>
+
+<footer>
+© 2026 Engelbert Schwank | Email: engelbert@gmx.at
+</footer>
 
 </body>
 </html>
