@@ -21,9 +21,9 @@
       width: 100%;
       background: #462106;
       color: #FFE0BA;
-      padding: 5px 20px;  /* deutlich weniger vertikal = schmalerer Header */
+      padding: 5px 15px;  /* weniger vertikal = flacherer Header */
       box-sizing: border-box;
-      min-height: 80px;   /* geringere Mindesthöhe */
+      min-height: 60px;   /* deutlich geringere Mindesthöhe */
     }
 
     header .header-text {
@@ -35,34 +35,34 @@
 
     header .header-text h1 {
       margin: 0;
-      font-size: 36px;    /* etwas kleiner für schmaleren Header */
-      line-height: 1.1;
+      font-size: 28px;    /* kleinere Schrift */
+      line-height: 1.0;
     }
 
     header .header-text .button {
       display: inline-block;
-      padding: 6px 14px;   /* kleinerer Button */
+      padding: 5px 12px;   /* kleinerer Button */
       background: #FFE0BA;
       color: #462106;
       text-decoration: none;
       border-radius: 6px;
       font-weight: bold;
       width: fit-content;
-      margin-top: 6px;
+      margin-top: 4px;
       transition: all 0.3s ease;
-      font-size: 14px;
+      font-size: 13px;
     }
 
     header .header-text .button:hover {
       background: #fff1dd;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
       transform: translateY(-2px);
     }
 
     /* Header-Bild: immer proportional zur Header-Höhe */
     header .header-image img {
-      height: 80%;       /* Bildhöhe = 80% der Header-Höhe */
-      width: auto;       /* proportional */
+      height: 60%;       /* kleineres Bild für flachen Header */
+      width: auto;       
       object-fit: contain;
       display: block;
     }
@@ -131,7 +131,7 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding: 5px 20px;
+        padding: 5px 15px;
       }
 
       header .header-text {
@@ -141,11 +141,11 @@
       }
 
       header .header-text h1 {
-        font-size: 28px;
+        font-size: 22px;
       }
 
       header .header-image img {
-        height: 60%; /* kleineres Bild auf Mobile */
+        height: 50%; /* kleineres Bild auf Mobile */
         margin-top: 10px;
       }
     }
@@ -171,7 +171,7 @@
       <p>
         Verantwortung ist für mich nicht der Position geschuldet, sondern der Aufgabe, Organisationen nachhaltig weiterzuentwickeln -
         ohne den Blick für Menschen oder Zahlen zu verlieren. Dabei verbinde ich unternehmerisches Denken mit Hands on Mentalität.
-       </p>
+      </p>
     </section>
 
     <section>
