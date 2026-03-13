@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
 <meta charset="UTF-8">
@@ -8,13 +8,13 @@
   body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #FFE0BA;
-    color: #462106;
+    background: #FFE0BA; /* hellbraun */
+    color: #462106;      /* dunkelbraun */
   }
 
   header {
-    background: #462106;
-    color: white;
+    background: #462106; /* dunkelbraun */
+    color: #FFE0BA;      /* hellbraun */
     text-align: center;
     padding: 60px 20px;
   }
@@ -32,8 +32,8 @@
     display: inline-block;
     margin-top: 20px;
     padding: 12px 20px;
-    background: white;
-    color: #462106;
+    background: #FFE0BA;  /* hellbraun */
+    color: #462106;       /* dunkelbraun */
     text-decoration: none;
     border-radius: 6px;
     font-weight: bold;
@@ -55,37 +55,38 @@
   }
 
   .skills div {
-    background: #462106;
+    background: #462106; /* dunkelbraun */
     height: 20px;
     margin: 10px 0;
     border-radius: 10px;
-    color: white;
+    color: #FFE0BA;      /* hellbraun Schrift */
     text-align: right;
     padding-right: 10px;
     line-height: 20px;
   }
 
   .project {
-    background: white;
+    background: #462106;  /* dunkelbraun Projekt-Box */
+    color: #FFE0BA;       /* hellbraun Schrift */
     padding: 20px;
     margin-top: 15px;
     border-radius: 10px;
+  }
+
+  a {
+    color: #FFE0BA; /* hellbraun Links */
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
   }
 
   footer {
     text-align: center;
     padding: 20px;
     background: #462106;
-    color: white;
-  }
-
-  a {
-    color: #462106;
-    text-decoration: none;
-  }
-
-  a:hover {
-    text-decoration: underline;
+    color: #FFE0BA;
   }
 </style>
 </head>
@@ -93,7 +94,7 @@
 
 <header>
   <h1>Engelbert Schwank</h1>
-  <p>Software Developer / Web Enthusiast</p>
+  <p>IT-Spezialist / Bewerbungsseite</p>
   <a class="button" href="#">Lebenslauf herunterladen</a>
 </header>
 
@@ -102,7 +103,7 @@
 <section>
   <h2>Über mich</h2>
   <p>
-    Ich bin Softwareentwickler mit Fokus auf moderne Webtechnologien. 
+    Ich bin IT-Spezialist mit Fokus auf moderne Webtechnologien. 
     Ich liebe es, benutzerfreundliche Anwendungen zu entwickeln und kreative Lösungen zu finden.
   </p>
 </section>
@@ -119,14 +120,42 @@
 
 <section>
   <h2>Projekte</h2>
+
   <div class="project">
     <h3>Projekt 1 – Portfolio Website</h3>
-    <p>Eine moderne Portfolio-Website, gebaut mit HTML, CSS und JavaScript.</p>
+    <p>Moderne Portfolio-Website, komplett in HTML, CSS und JavaScript umgesetzt.</p>
   </div>
+  
   <div class="project">
     <h3>Projekt 2 – Web App</h3>
-    <p>Eine kleine Webanwendung zur Verwaltung von Aufgaben, mit React und Firebase.</p>
+    <p>Webanwendung zur Aufgabenverwaltung mit React und Firebase.</p>
   </div>
+  
+  <div class="project">
+    <h3>Projekt 3 – Datenanalyse</h3>
+    <p>Python-Skript zur Analyse von Verkaufsdaten und Visualisierung.</p>
+  </div>
+  
+  <div class="project">
+    <h3>Projekt 4 – Blog System</h3>
+    <p>Content-Management-System mit Node.js und MongoDB.</p>
+  </div>
+  
+  <div class="project">
+    <h3>Projekt 5 – Mobile App</h3>
+    <p>Cross-Plattform-App mit React Native zur Organisation von Terminen.</p>
+  </div>
+  
+  <div class="project">
+    <h3>Projekt 6 – API Entwicklung</h3>
+    <p>Entwicklung einer REST API für ein internes Verwaltungssystem.</p>
+  </div>
+  
+  <div class="project">
+    <h3>Projekt 7 – Automatisierung</h3>
+    <p>Automatisierung von wiederkehrenden Aufgaben mit Python-Skripten.</p>
+  </div>
+
 </section>
 
 <section>
