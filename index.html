@@ -1,260 +1,264 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Engelbert Schwank - Bewerbungsseite</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Engelbert Schwank - Bewerbungsseite</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #FFE0BA;
-      color: #462106;
-    }
+<style>
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      background: #462106;
-      color: #FFE0BA;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #FFE0BA;
+  color: #462106;
+}
 
-      /* Mehr Platz oben und unten */
-      padding: clamp(12px, 1.8vw, 18px) clamp(12px, 2vw, 18px);
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+  background: #462106;
+  color: #FFE0BA;
 
-      box-sizing: border-box;
-      min-height: 0;
-    }
+  padding: clamp(12px, 1.8vw, 18px) clamp(12px, 2vw, 18px);
 
-    header .header-text {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: clamp(2px, 0.6vw, 6px);
-      max-width: 78%;
-    }
+  box-sizing: border-box;
+  min-height: 0;
+}
 
-    header .header-text h1 {
-      margin: 0;
-      font-size: clamp(34px, 3.8vw, 56px);
-      line-height: 1.0;
-    }
+header .header-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(2px, 0.6vw, 6px);
+  max-width: 78%;
+}
 
-    header .header-text .button {
-      display: inline-block;
-      padding: 5px 12px;
-      background: #FFE0BA;
-      color: #462106;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      width: fit-content;
-      margin: 0;
-      font-size: 13px;
-      transition: all 0.3s ease;
-    }
+header .header-text h1 {
+  margin: 0;
+  font-size: clamp(34px, 3.8vw, 56px);
+  line-height: 1.0;
+}
 
-    header .header-text .button:hover {
-      background: #fff1dd;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-      transform: translateY(-2px);
-    }
+header .header-text .button {
+  display: inline-block;
+  padding: 5px 12px;
+  background: #FFE0BA;
+  color: #462106;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  width: fit-content;
+  margin: 0;
+  font-size: 13px;
+  transition: all 0.3s ease;
+}
 
-    header .header-image {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      flex: 0 0 auto;
-    }
+header .header-text .button:hover {
+  background: #fff1dd;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
+}
 
-    header .header-image img {
-      display: block;
-      height: auto;
-      width: auto;
-      max-height: clamp(38px, 5.2vw, 64px);
-      border-radius: 6px;
-      object-fit: contain;
-    }
+header .header-image {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 0 0 auto;
+  height: 100%;
+}
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 30px 20px;
-      box-sizing: border-box;
-    }
+header .header-image img {
+  display: block;
+  height: 100%;
+  width: auto;
+  border-radius: 6px;
+  object-fit: cover;
+}
 
-    section {
-      margin-bottom: 50px;
-    }
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 30px 20px;
+  box-sizing: border-box;
+}
 
-    section:first-of-type p {
-      text-align: justify;
-      text-justify: inter-word;
-    }
+section {
+  margin-bottom: 50px;
+}
 
-    h2 {
-      border-bottom: 2px solid #462106;
-      padding-bottom: 8px;
-    }
+section:first-of-type p {
+  text-align: justify;
+  text-justify: inter-word;
+}
 
-    .skills div {
-      background: #462106;
-      height: 20px;
-      margin: 10px 0;
-      border-radius: 10px;
-      color: #FFE0BA;
-      text-align: right;
-      padding-right: 10px;
-      line-height: 20px;
-      box-sizing: border-box;
-    }
+h2 {
+  border-bottom: 2px solid #462106;
+  padding-bottom: 8px;
+}
 
-    .project {
-      background: #462106;
-      color: #FFE0BA;
-      padding: 20px;
-      margin-top: 15px;
-      border-radius: 10px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
+.skills div {
+  background: #462106;
+  height: 20px;
+  margin: 10px 0;
+  border-radius: 10px;
+  color: #FFE0BA;
+  text-align: right;
+  padding-right: 10px;
+  line-height: 20px;
+  box-sizing: border-box;
+}
 
-    .project:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 5px 12px rgba(0,0,0,0.25);
-    }
+.project {
+  background: #462106;
+  color: #FFE0BA;
+  padding: 20px;
+  margin-top: 15px;
+  border-radius: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
-    a {
-      color: #FFE0BA;
-      text-decoration: none;
-    }
+.project:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.25);
+}
 
-    a:hover {
-      text-decoration: underline;
-    }
+a {
+  color: #FFE0BA;
+  text-decoration: none;
+}
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #462106;
-      color: #FFE0BA;
-    }
+a:hover {
+  text-decoration: underline;
+}
 
-    @media (max-width: 600px) {
-      header {
-        flex-direction: row;
-        align-items: center;
-        padding: 12px;
-      }
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #462106;
+  color: #FFE0BA;
+}
 
-      header .header-text {
-        max-width: 75%;
-        gap: 3px;
-      }
+@media (max-width: 600px) {
 
-      header .header-text h1 {
-        font-size: clamp(26px, 6vw, 34px);
-      }
+  header {
+    flex-direction: row;
+    align-items: stretch;
+    padding: 12px;
+  }
 
-      header .header-image img {
-        max-height: 46px;
-      }
-    }
-  </style>
+  header .header-text {
+    max-width: 75%;
+    gap: 3px;
+  }
+
+  header .header-text h1 {
+    font-size: clamp(26px, 6vw, 34px);
+  }
+
+}
+
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="header-text">
-    <h1>Engelbert Schwank</h1>
-    <a class="button" href="#">Lebenslauf herunterladen</a>
-  </div>
-  <div class="header-image">
-    <img src="Foto.png" alt="Foto von Engelbert Schwank">
-  </div>
+
+<div class="header-text">
+<h1>Engelbert Schwank</h1>
+<a class="button" href="#">Lebenslauf herunterladen</a>
+</div>
+
+<div class="header-image">
+<img src="Foto.png" alt="Foto von Engelbert Schwank">
+</div>
+
 </header>
 
 <div class="container">
 
 <section>
-  <h2>Über mich</h2>
-  <p>
-    Verantwortung ist für mich nicht der Position geschuldet, sondern der Aufgabe, Organisationen nachhaltig weiterzuentwickeln –
-    ohne den Blick für Menschen oder Zahlen zu verlieren. Dabei verbinde ich unternehmerisches Denken mit Hands-on-Mentalität.
-  </p>
+<h2>Über mich</h2>
+<p>
+Verantwortung ist für mich nicht der Position geschuldet, sondern der Aufgabe, Organisationen nachhaltig weiterzuentwickeln –
+ohne den Blick für Menschen oder Zahlen zu verlieren. Dabei verbinde ich unternehmerisches Denken mit Hands-on-Mentalität.
+</p>
 </section>
 
 <section>
-  <h2>Fähigkeiten</h2>
-  <div class="skills">
-    <div style="width: 95%;">Projekt-, Budget- und Mitarbeiterverantwortung</div>
-    <div style="width: 88%;">Organisationsentwicklung und Prozessoptimierung</div>
-    <div style="width: 80%;">Qualitätsmanagement und Qualitätssysteme</div>
-    <div style="width: 75%;">Digitalisierung</div>
-  </div>
-</section>
+<h2>Fähigkeiten</h2>
 
-<section>
-  <h2>Projekte</h2>
-
-  <div class="project">
-    <h3>Projekt 1 – Portfolio Website</h3>
-    <p>Moderne Portfolio-Website, komplett in HTML, CSS und JavaScript umgesetzt.</p>
-  </div>
-
-  <div class="project">
-    <h3>Projekt 2 – Web App</h3>
-    <p>Webanwendung zur Aufgabenverwaltung mit React und Firebase.</p>
-  </div>
-
-  <div class="project">
-    <h3>Projekt 3 – Datenanalyse</h3>
-    <p>Python-Skript zur Analyse von Verkaufsdaten und Visualisierung.</p>
-  </div>
-
-  <div class="project">
-    <h3>Projekt 4 – Blog System</h3>
-    <p>Content-Management-System mit Node.js und MongoDB.</p>
-  </div>
-
-  <div class="project">
-    <h3>Projekt 5 – Mobile App</h3>
-    <p>Cross-Plattform-App mit React Native zur Organisation von Terminen.</p>
-  </div>
-
-  <div class="project">
-    <h3>Projekt 6 – API Entwicklung</h3>
-    <p>Entwicklung einer REST API für ein internes Verwaltungssystem.</p>
-  </div>
-
-  <div class="project">
-    <h3>Projekt 7 – Automatisierung</h3>
-    <p>Automatisierung von wiederkehrenden Aufgaben mit Python-Skripten.</p>
-  </div>
+<div class="skills">
+<div style="width: 95%;">Projekt-, Budget- und Mitarbeiterverantwortung</div>
+<div style="width: 88%;">Organisationsentwicklung und Prozessoptimierung</div>
+<div style="width: 80%;">Qualitätsmanagement und Qualitätssysteme</div>
+<div style="width: 75%;">Digitalisierung</div>
+</div>
 
 </section>
 
 <section>
-  <h2>Zeugnisse</h2>
-  <div class="project">
-    <p><a href="#" target="_blank" rel="noopener">Schul-/Studienzeugnisse ansehen oder herunterladen</a></p>
-  </div>
+<h2>Projekte</h2>
+
+<div class="project">
+<h3>Projekt 1 – Portfolio Website</h3>
+<p>Moderne Portfolio-Website, komplett in HTML, CSS und JavaScript umgesetzt.</p>
+</div>
+
+<div class="project">
+<h3>Projekt 2 – Web App</h3>
+<p>Webanwendung zur Aufgabenverwaltung mit React und Firebase.</p>
+</div>
+
+<div class="project">
+<h3>Projekt 3 – Datenanalyse</h3>
+<p>Python-Skript zur Analyse von Verkaufsdaten und Visualisierung.</p>
+</div>
+
+<div class="project">
+<h3>Projekt 4 – Blog System</h3>
+<p>Content-Management-System mit Node.js und MongoDB.</p>
+</div>
+
+<div class="project">
+<h3>Projekt 5 – Mobile App</h3>
+<p>Cross-Plattform-App mit React Native zur Organisation von Terminen.</p>
+</div>
+
+<div class="project">
+<h3>Projekt 6 – API Entwicklung</h3>
+<p>Entwicklung einer REST API für ein internes Verwaltungssystem.</p>
+</div>
+
+<div class="project">
+<h3>Projekt 7 – Automatisierung</h3>
+<p>Automatisierung von wiederkehrenden Aufgaben mit Python-Skripten.</p>
+</div>
+
 </section>
 
 <section>
-  <h2>Dienstzeugnisse</h2>
-  <div class="project">
-    <p><a href="#" target="_blank" rel="noopener">Dienstzeugnisse ansehen oder herunterladen</a></p>
-  </div>
+<h2>Zeugnisse</h2>
+<div class="project">
+<p><a href="#" target="_blank" rel="noopener">Schul-/Studienzeugnisse ansehen oder herunterladen</a></p>
+</div>
 </section>
 
 <section>
-  <h2>Kontakt</h2>
-  <p>Email: engelbert@gmx.at</p>
-  <p>LinkedIn: <a href="#" target="_blank" rel="noopener">Profil-Link</a></p>
-  <p>GitHub: <a href="#" target="_blank" rel="noopener">Profil-Link</a></p>
+<h2>Dienstzeugnisse</h2>
+<div class="project">
+<p><a href="#" target="_blank" rel="noopener">Dienstzeugnisse ansehen oder herunterladen</a></p>
+</div>
+</section>
+
+<section>
+<h2>Kontakt</h2>
+<p>Email: engelbert@gmx.at</p>
+<p>LinkedIn: <a href="#" target="_blank" rel="noopener">Profil-Link</a></p>
+<p>GitHub: <a href="#" target="_blank" rel="noopener">Profil-Link</a></p>
 </section>
 
 </div>
