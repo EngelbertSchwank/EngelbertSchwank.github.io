@@ -58,12 +58,12 @@
       transform: translateY(-2px);
     }
 
-    /* Bild im Header: genau so hoch wie der Header */
+    /* Bild im Header: max 160px Höhe auf Desktop */
     header .header-image img {
-      height: 200px;       /* exakte Header-Höhe */
-      width: auto;         /* Breite proportional */
-      border-radius: 0;    /* Rechteck */
-      object-fit: cover;   /* Bild füllt Rechteck sauber */
+      max-height: 160px;  /* passt besser in den Header */
+      width: auto;        /* Breite proportional */
+      border-radius: 0;   /* Rechteck */
+      object-fit: cover;  /* Bild füllt Rechteck sauber */
     }
 
     .container {
@@ -118,6 +118,7 @@
       color: #FFE0BA;
     }
 
+    /* Responsive für kleine Bildschirme */
     @media (max-width: 600px) {
       header {
         flex-direction: column;
@@ -138,7 +139,7 @@
       }
 
       header .header-image img {
-        height: 120px;   /* kleineres Bild auf Handy */
+        max-height: 100px; /* kleineres Bild auf Handy */
         margin-top: 10px;
       }
     }
