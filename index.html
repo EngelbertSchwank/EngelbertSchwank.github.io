@@ -12,18 +12,21 @@
     color: #462106;      /* dunkelbraun */
   }
 
-  /* Header mit Bild links und Text rechts */
+  /* Header mit Bild links, Text rechts */
   header {
     display: flex;
-    align-items: stretch; /* Bild volle Höhe */
+    width: 100%;
     background: #462106;  /* dunkelbraun */
     color: #FFE0BA;       /* hellbraun Schrift */
+    height: 200px;        /* feste Header-Höhe */
+    align-items: center;
   }
 
   header img {
-    height: 200px;       /* Header-Höhe festlegen */
+    height: 100%;         /* Bild füllt Header-Höhe */
     width: auto;
-    object-fit: cover;   /* Bild füllt Höhe, bleibt proportional */
+    object-fit: cover;    /* Bild proportional skalieren */
+    flex-shrink: 0;       /* Bild bleibt links */
   }
 
   header .header-text {
@@ -107,10 +110,12 @@
   @media (max-width: 600px) {
     header {
       flex-direction: column;
+      height: auto;
       align-items: center;
     }
     header img {
       height: 150px;
+      width: auto;
     }
     header .header-text {
       padding: 10px;
