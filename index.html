@@ -13,15 +13,15 @@
       color: #462106;      /* dunkelbraun */
     }
 
-    /* Header nur mit Text (ohne Bild) */
+    /* Header mit Text links und Bild rechts */
     header {
       display: flex;
-      justify-content: flex-start; /* kein leerer Platz rechts */
+      justify-content: space-between; /* Text links, Bild rechts */
+      align-items: center;
       width: 100%;
       background: #462106;  /* dunkelbraun */
       color: #FFE0BA;       /* hellbraun Schrift */
       height: 200px;        /* feste Header-Höhe */
-      align-items: center;
       padding: 0 20px;
       box-sizing: border-box;
     }
@@ -30,7 +30,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      max-width: 100%;
+      max-width: 70%;
     }
 
     header .header-text h1 {
@@ -56,6 +56,14 @@
       background: #fff1dd;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       transform: translateY(-2px);
+    }
+
+    /* Bild im Header */
+    header .header-image img {
+      height: 160px;      /* Höhe des Fotos */
+      width: auto;        /* Breite proportional */
+      border-radius: 10px; /* optional abgerundet */
+      object-fit: cover;   /* Bild füllt Rechteck sauber */
     }
 
     .container {
@@ -128,6 +136,11 @@
       header .header-text h1 {
         font-size: 34px;
       }
+
+      header .header-image img {
+        height: 120px;   /* kleineres Bild auf Handy */
+        margin-top: 10px;
+      }
     }
   </style>
 </head>
@@ -138,6 +151,9 @@
     <div class="header-text">
       <h1>Engelbert Schwank</h1>
       <a class="button" href="#">Lebenslauf herunterladen</a>
+    </div>
+    <div class="header-image">
+      <img src="Foto.png" alt="Foto von Engelbert Schwank">
     </div>
   </header>
 
@@ -230,4 +246,3 @@
 
 </body>
 </html>
-``
