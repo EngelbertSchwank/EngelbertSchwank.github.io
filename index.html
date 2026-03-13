@@ -1,105 +1,233 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meine Webseite mit Header-Foto</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Engelbert Schwank - Bewerbungsseite</title>
+
   <style>
-    /* ===========================
-       Grundlegendes Styling
-    =========================== */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #ffffff;
-      color: #333;
+      background: #FFE0BA; /* hellbraun */
+      color: #462106;      /* dunkelbraun */
     }
 
-    main {
-      padding: 20px;
+    /* Header nur mit Text (ohne Bild) */
+    header {
+      display: flex;
+      justify-content: flex-start; /* kein leerer Platz rechts */
+      width: 100%;
+      background: #462106;  /* dunkelbraun */
+      color: #FFE0BA;       /* hellbraun Schrift */
+      height: 200px;        /* feste Header-Höhe */
+      align-items: center;
+      padding: 0 20px;
+      box-sizing: border-box;
     }
 
-    /* ===========================
-       Header Styling
-    =========================== */
-    .header {
-      display: flex;                  /* Flexbox für horizontale Anordnung */
-      align-items: center;            /* Vertikal zentriert */
-      justify-content: space-between; /* Titel links, Bild rechts */
-      height: 120px;                  /* Höhe des Headers */
-      padding: 0 20px;                /* Abstand links/rechts */
-      background-color: #f0f0f0;      /* Hintergrundfarbe Header */
-      box-sizing: border-box;         /* Padding wird mitgerechnet */
-      border-bottom: 2px solid #ccc;  /* optional: unterer Rand */
+    header .header-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 100%;
     }
 
-    .header h1 {
+    header .header-text h1 {
       margin: 0;
-      font-size: 2rem;
+      font-size: 40px;
+      line-height: 1.1;
     }
 
-    .header-foto {
-      height: 100%;                  /* volle Höhe des Headers */
-      width: auto;                   /* proportional skalieren */
-      object-fit: contain;           /* nicht verzerren */
-      border-radius: 5px;            /* optional: abgerundete Ecken */
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* optional: Schatten */
-    }
-
-    /* ===========================
-       Footer Styling
-    =========================== */
-    footer {
-      background-color: #f0f0f0;
-      text-align: center;
+    header .header-text .button {
+      display: inline-block;
       padding: 10px 20px;
-      border-top: 2px solid #ccc;
+      background: #FFE0BA;
+      color: #462106;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      width: fit-content;
+      margin-top: 10px;
+      transition: all 0.3s ease;
     }
 
-    /* ===========================
-       Responsive Anpassung
-    =========================== */
+    header .header-text .button:hover {
+      background: #fff1dd;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transform: translateY(-2px);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px 20px;
+      box-sizing: border-box;
+    }
+
+    section {
+      margin-bottom: 50px;
+    }
+
+    h2 {
+      border-bottom: 2px solid #462106;
+      padding-bottom: 8px;
+    }
+
+    .skills div {
+      background: #462106;
+      height: 20px;
+      margin: 10px 0;
+      border-radius: 10px;
+      color: #FFE0BA;
+      text-align: right;
+      padding-right: 10px;
+      line-height: 20px;
+      box-sizing: border-box;
+    }
+
+    .project {
+      background: #462106;
+      color: #FFE0BA;
+      padding: 20px;
+      margin-top: 15px;
+      border-radius: 10px;
+    }
+
+    a {
+      color: #FFE0BA;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #462106;
+      color: #FFE0BA;
+    }
+
     @media (max-width: 600px) {
-      .header {
-        flex-direction: column;  /* Stapelt Titel und Bild */
-        height: auto;            /* Höhe passt sich an */
+      header {
+        flex-direction: column;
+        height: auto;
+        align-items: center;
         text-align: center;
-        padding: 10px;
+        padding: 20px;
       }
 
-      .header-foto {
-        height: 80px;            /* Bild verkleinern */
-        margin-top: 10px;
+      header .header-text {
+        max-width: 100%;
+        padding: 10px 0;
+        align-items: center;
+      }
+
+      header .header-text h1 {
+        font-size: 34px;
       }
     }
   </style>
 </head>
+
 <body>
 
-  <!-- ===========================
-       Header
-  =========================== -->
-  <header class="header">
-    <h1>Mein Titel</h1>
-    <img src="Foto.png" alt="Mein Foto" class="header-foto">
+  <header>
+    <div class="header-text">
+      <h1>Engelbert Schwank</h1>
+      <a class="button" href="#">Lebenslauf herunterladen</a>
+    </div>
   </header>
 
-  <!-- ===========================
-       Hauptinhalt
-  =========================== -->
-  <main>
-    <h2>Willkommen auf meiner Webseite!</h2>
-    <p>Hier ist ein Beispielinhalt für deine Webseite. Du kannst Texte, Bilder, Tabellen und alles Weitere hinzufügen.</p>
+  <div class="container">
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum feugiat, nulla eu maximus pharetra, justo sapien tincidunt libero, ut facilisis nibh dolor non est.</p>
-  </main>
+    <section>
+      <h2>Über mich</h2>
+      <p>
+        Ich bin IT-Spezialist mit Fokus auf moderne Webtechnologien.
+        Ich liebe es, benutzerfreundliche Anwendungen zu entwickeln und kreative Lösungen zu finden.
+      </p>
+    </section>
 
-  <!-- ===========================
-       Footer
-  =========================== -->
+    <section>
+      <h2>Fähigkeiten</h2>
+      <div class="skills">
+        <div style="width: 90%;">HTML / CSS</div>
+        <div style="width: 80%;">JavaScript / React</div>
+        <div style="width: 70%;">Python</div>
+        <div style="width: 60%;">Datenbanken / SQL</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Projekte</h2>
+
+      <div class="project">
+        <h3>Projekt 1 – Portfolio Website</h3>
+        <p>Moderne Portfolio-Website, komplett in HTML, CSS und JavaScript umgesetzt.</p>
+      </div>
+
+      <div class="project">
+        <h3>Projekt 2 – Web App</h3>
+        <p>Webanwendung zur Aufgabenverwaltung mit React und Firebase.</p>
+      </div>
+
+      <div class="project">
+        <h3>Projekt 3 – Datenanalyse</h3>
+        <p>Python-Skript zur Analyse von Verkaufsdaten und Visualisierung.</p>
+      </div>
+
+      <div class="project">
+        <h3>Projekt 4 – Blog System</h3>
+        <p>Content-Management-System mit Node.js und MongoDB.</p>
+      </div>
+
+      <div class="project">
+        <h3>Projekt 5 – Mobile App</h3>
+        <p>Cross-Plattform-App mit React Native zur Organisation von Terminen.</p>
+      </div>
+
+      <div class="project">
+        <h3>Projekt 6 – API Entwicklung</h3>
+        <p>Entwicklung einer REST API für ein internes Verwaltungssystem.</p>
+      </div>
+
+      <div class="project">
+        <h3>Projekt 7 – Automatisierung</h3>
+        <p>Automatisierung von wiederkehrenden Aufgaben mit Python-Skripten.</p>
+      </div>
+
+    </section>
+
+    <section>
+      <h2>Zeugnisse</h2>
+      <div class="project">
+        <p><a href="#" target="_blank" rel="noopener">Schul-/Studienzeugnisse ansehen oder herunterladen</a></p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Dienstzeugnisse</h2>
+      <div class="project">
+        <p><a href="#" target="_blank" rel="noopener">Dienstzeugnisse ansehen oder herunterladen</a></p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Kontakt</h2>
+      <p>Email: engelbert@gmx.at</p>
+      <p>LinkedIn: <a href="#" target="_blank" rel="noopener">Profil-Link</a></p>
+      <p>GitHub: <a href="#" target="_blank" rel="noopener">Profil-Link</a></p>
+    </section>
+
+  </div>
+
   <footer>
-    &copy; 2026 Mein Name. Alle Rechte vorbehalten.
+    © 2026 Engelbert Schwank | Email: engelbert@gmx.at
   </footer>
 
 </body>
 </html>
+``
