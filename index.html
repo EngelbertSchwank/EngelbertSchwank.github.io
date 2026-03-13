@@ -13,16 +13,15 @@
       color: #462106;      /* dunkelbraun */
     }
 
-    /* Header mit Text links und Bild rechts */
+    /* Header: Text links, Bild rechts */
     header {
       display: flex;
-      justify-content: space-between; /* Text links, Bild rechts */
+      justify-content: space-between;
       align-items: center;
       width: 100%;
-      background: #462106;  /* dunkelbraun */
-      color: #FFE0BA;       /* hellbraun Schrift */
-      height: 200px;        /* feste Header-Höhe */
-      padding: 0 20px;
+      background: #462106;
+      color: #FFE0BA;
+      padding: 20px;          /* flexible Höhe durch Padding */
       box-sizing: border-box;
     }
 
@@ -58,12 +57,12 @@
       transform: translateY(-2px);
     }
 
-    /* Bild im Header: max 160px Höhe auf Desktop */
+    /* Header-Bild: immer proportional zur Header-Höhe */
     header .header-image img {
-      max-height: 160px;  /* passt besser in den Header */
-      width: auto;        /* Breite proportional */
-      border-radius: 0;   /* Rechteck */
-      object-fit: cover;  /* Bild füllt Rechteck sauber */
+      max-height: 100%;  /* passt sich an Header an */
+      width: auto;       /* proportional */
+      object-fit: contain;
+      display: block;
     }
 
     .container {
@@ -122,10 +121,8 @@
     @media (max-width: 600px) {
       header {
         flex-direction: column;
-        height: auto;
         align-items: center;
         text-align: center;
-        padding: 20px;
       }
 
       header .header-text {
@@ -139,7 +136,7 @@
       }
 
       header .header-image img {
-        max-height: 100px; /* kleineres Bild auf Handy */
+        max-height: 150px; /* Bild wird kleiner auf Mobile */
         margin-top: 10px;
       }
     }
