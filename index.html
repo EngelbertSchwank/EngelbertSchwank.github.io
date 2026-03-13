@@ -46,6 +46,13 @@
     font-weight: bold;
     width: fit-content;
     margin-top: 10px;
+    transition: all 0.3s ease;
+  }
+
+  header .header-text .button:hover {
+    background: #fff1dd;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transform: translateY(-2px);
   }
 
   header img {
@@ -53,6 +60,7 @@
     width: auto;         /* proportional */
     border-radius: 8px;  /* leicht abgerundete Ecken */
     object-fit: cover;
+    alt: "";             /* WICHTIG: leer lassen, damit kein Text angezeigt wird */
   }
 
   .container {
@@ -131,7 +139,7 @@
     <h1>Engelbert Schwank</h1>
     <a class="button" href="#">Lebenslauf herunterladen</a>
   </div>
-  <img src="foto-esc.png" alt="Engelbert Schwank">
+  <img src="foto-esc.png" alt="">
 </header>
 
 <div class="container">
