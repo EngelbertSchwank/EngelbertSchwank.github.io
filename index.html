@@ -1,131 +1,159 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mein Portfolio</title>
-
+<title>Engelbert Schwank - Bewerbungsseite</title>
 <style>
-
-body{
-    margin:0;
+  body {
+    margin: 0;
     font-family: Arial, sans-serif;
-    background:#FFE0BA;
-    color:#462106;
-}
+    background: #FFE0BA;
+    color: #462106;
+  }
 
-header{
-    background:#462106;
-    color:white;
-    text-align:center;
-    padding:60px 20px;
-}
+  header {
+    background: #462106;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+  }
 
-header h1{
-    margin:0;
-    font-size:40px;
-}
+  header h1 {
+    margin: 0;
+    font-size: 40px;
+  }
 
-header p{
-    font-size:20px;
-}
+  header p {
+    font-size: 20px;
+  }
 
-.container{
-    max-width:900px;
-    margin:auto;
-    padding:40px 20px;
-}
+  .button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: white;
+    color: #462106;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+  }
 
-section{
-    margin-bottom:50px;
-}
+  .container {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 20px;
+  }
 
-h2{
-    border-bottom:2px solid #462106;
-    padding-bottom:10px;
-}
+  section {
+    margin-bottom: 50px;
+  }
 
-.project{
-    background:white;
-    padding:20px;
-    margin-top:15px;
-    border-radius:10px;
-}
+  h2 {
+    border-bottom: 2px solid #462106;
+    padding-bottom: 10px;
+  }
 
-.button{
-    display:inline-block;
-    margin-top:20px;
-    padding:12px 20px;
-    background:#462106;
-    color:white;
-    text-decoration:none;
-    border-radius:6px;
-}
+  .skills div {
+    background: #462106;
+    height: 20px;
+    margin: 10px 0;
+    border-radius: 10px;
+    color: white;
+    text-align: right;
+    padding-right: 10px;
+    line-height: 20px;
+  }
 
-footer{
-    text-align:center;
-    padding:20px;
-    background:#462106;
-    color:white;
-}
+  .project {
+    background: white;
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 10px;
+  }
 
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: #462106;
+    color: white;
+  }
+
+  a {
+    color: #462106;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
 </style>
 </head>
-
 <body>
 
 <header>
-<h1>Dein Name</h1>
-<p>Berufsbezeichnung / Wunschposition</p>
-<a class="button" href="#">Lebenslauf herunterladen</a>
+  <h1>Engelbert Schwank</h1>
+  <p>Software Developer / Web Enthusiast</p>
+  <a class="button" href="#">Lebenslauf herunterladen</a>
 </header>
 
 <div class="container">
 
 <section>
-<h2>Über mich</h2>
-<p>
-Hier kannst du kurz etwas über dich schreiben. Zum Beispiel:
-Ich interessiere mich für Technologie, arbeite strukturiert und habe Spaß daran,
-neue Lösungen zu entwickeln.
-</p>
+  <h2>Über mich</h2>
+  <p>
+    Ich bin Softwareentwickler mit Fokus auf moderne Webtechnologien. 
+    Ich liebe es, benutzerfreundliche Anwendungen zu entwickeln und kreative Lösungen zu finden.
+  </p>
 </section>
 
 <section>
-<h2>Fähigkeiten</h2>
-<ul>
-<li>Skill 1</li>
-<li>Skill 2</li>
-<li>Skill 3</li>
-<li>Skill 4</li>
-</ul>
+  <h2>Fähigkeiten</h2>
+  <div class="skills">
+    <div style="width: 90%;">HTML / CSS</div>
+    <div style="width: 80%;">JavaScript / React</div>
+    <div style="width: 70%;">Python</div>
+    <div style="width: 60%;">Datenbanken / SQL</div>
+  </div>
 </section>
 
 <section>
-<h2>Projekte</h2>
-
-<div class="project">
-<h3>Projekt 1</h3>
-<p>Kurzbeschreibung des Projekts.</p>
-</div>
-
-<div class="project">
-<h3>Projekt 2</h3>
-<p>Kurzbeschreibung des Projekts.</p>
-</div>
-
+  <h2>Projekte</h2>
+  <div class="project">
+    <h3>Projekt 1 – Portfolio Website</h3>
+    <p>Eine moderne Portfolio-Website, gebaut mit HTML, CSS und JavaScript.</p>
+  </div>
+  <div class="project">
+    <h3>Projekt 2 – Web App</h3>
+    <p>Eine kleine Webanwendung zur Verwaltung von Aufgaben, mit React und Firebase.</p>
+  </div>
 </section>
 
 <section>
-<h2>Kontakt</h2>
-<p>Email: deine@email.de</p>
-<p>LinkedIn: dein Profil</p>
+  <h2>Zeugnisse</h2>
+  <div class="project">
+    <p><a href="#" target="_blank">Schul-/Studienzeugnisse ansehen oder herunterladen</a></p>
+  </div>
+</section>
+
+<section>
+  <h2>Dienstzeugnisse</h2>
+  <div class="project">
+    <p><a href="#" target="_blank">Dienstzeugnisse ansehen oder herunterladen</a></p>
+  </div>
+</section>
+
+<section>
+  <h2>Kontakt</h2>
+  <p>Email: engelbert@email.de</p>
+  <p>LinkedIn: <a href="#" target="_blank">Profil-Link</a></p>
+  <p>GitHub: <a href="#" target="_blank">Profil-Link</a></p>
 </section>
 
 </div>
 
 <footer>
-© 2026 Dein Name
+  © 2026 Engelbert Schwank | Email: engelbert@email.de
 </footer>
 
 </body>
