@@ -13,7 +13,7 @@
       color: #462106;      /* dunkelbraun */
     }
 
-    /* Header: Text links, Bild rechts */
+    /* Header: kompakt, Name groß, Foto klein & an Header angepasst */
     header {
       display: flex;
       justify-content: space-between;
@@ -21,36 +21,47 @@
       width: 100%;
       background: #462106;
       color: #FFE0BA;
-      padding: 5px 15px;  /* weniger vertikal = flacherer Header */
+
+      /* kompakter Header (flexibel, keine fixe Höhe) */
+      padding: clamp(6px, 1.1vw, 10px) clamp(12px, 2vw, 18px);
       box-sizing: border-box;
-      min-height: 60px;   /* deutlich geringere Mindesthöhe */
+
+      /* wichtig: nichts erzwingen, damit er nicht zu hoch wird */
+      min-height: 0;
     }
 
     header .header-text {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      max-width: 70%;
+
+      /* weniger vertikaler Abstand */
+      gap: clamp(2px, 0.6vw, 6px);
+
+      /* damit Name/Button nicht vom Foto zerdrückt werden */
+      max-width: 78%;
     }
 
+    /* Name: deutlich größer, aber responsive */
     header .header-text h1 {
       margin: 0;
-      font-size: 28px;    /* kleinere Schrift */
+      font-size: clamp(34px, 3.8vw, 56px);
       line-height: 1.0;
     }
 
+    /* Button: kompakt */
     header .header-text .button {
       display: inline-block;
-      padding: 5px 12px;   /* kleinerer Button */
+      padding: 5px 12px;
       background: #FFE0BA;
       color: #462106;
       text-decoration: none;
       border-radius: 6px;
       font-weight: bold;
       width: fit-content;
-      margin-top: 4px;
-      transition: all 0.3s ease;
+      margin: 0;
       font-size: 13px;
+      transition: all 0.3s ease;
     }
 
     header .header-text .button:hover {
@@ -59,12 +70,24 @@
       transform: translateY(-2px);
     }
 
-    /* Header-Bild: immer proportional zur Header-Höhe */
+    header .header-image {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex: 0 0 auto;
+    }
+
+    /* Foto klein halten, ohne Header "aufzublasen" */
     header .header-image img {
-      height: 60%;       /* kleineres Bild für flachen Header */
-      width: auto;       
-      object-fit: contain;
       display: block;
+      height: auto;
+      width: auto;
+
+      /* Schlüssel: Foto bleibt klein und skaliert mit Viewport */
+      max-height: clamp(38px, 5.2vw, 64px);
+
+      border-radius: 6px;
+      object-fit: contain;
     }
 
     .container {
@@ -125,28 +148,25 @@
       color: #FFE0BA;
     }
 
-    /* Responsive für kleine Bildschirme */
+    /* Responsive: kompakt, Name groß, Foto noch kleiner */
     @media (max-width: 600px) {
       header {
-        flex-direction: column;
+        flex-direction: row;   /* bleibt in einer Zeile -> kompakter */
         align-items: center;
-        text-align: center;
-        padding: 5px 15px;
+        padding: 8px 12px;
       }
 
       header .header-text {
-        max-width: 100%;
-        padding: 5px 0;
-        align-items: center;
+        max-width: 75%;
+        gap: 3px;
       }
 
       header .header-text h1 {
-        font-size: 22px;
+        font-size: clamp(26px, 6vw, 34px);
       }
 
       header .header-image img {
-        height: 50%; /* kleineres Bild auf Mobile */
-        margin-top: 10px;
+        max-height: 46px;
       }
     }
   </style>
@@ -169,8 +189,8 @@
     <section>
       <h2>Über mich</h2>
       <p>
-        Verantwortung ist für mich nicht der Position geschuldet, sondern der Aufgabe, Organisationen nachhaltig weiterzuentwickeln -
-        ohne den Blick für Menschen oder Zahlen zu verlieren. Dabei verbinde ich unternehmerisches Denken mit Hands on Mentalität.
+        Verantwortung ist für mich nicht der Position geschuldet, sondern der Aufgabe, Organisationen nachhaltig weiterzuentwickeln –
+        ohne den Blick für Menschen oder Zahlen zu verlieren. Dabei verbinde ich unternehmerisches Denken mit Hands-on-Mentalität.
       </p>
     </section>
 
