@@ -1,1 +1,222 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Engelbert Schwank - Bewerbungsseite</title>
 
+<!-- Gill Sans Nova via Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Gill+Sans+Nova:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+  body {
+    margin: 0;
+    font-family: 'Gill Sans Nova', 'Gill Sans', sans-serif;
+    background: #FFE0BA; /* hellbraun */
+    color: #462106;      /* dunkelbraun */
+  }
+
+  /* Header mit Bild links, Text rechts */
+  header {
+    display: flex;
+    width: 100%;
+    background: #462106;  
+    color: #FFE0BA;
+    height: 200px;        
+    align-items: center;
+  }
+
+  header img {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  header .header-text {
+    padding: 20px 20px 20px 30px; /* links 30px für 1cm Verschiebung */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  header .header-text h1 {
+    margin: 0;
+    font-size: 40px;
+    font-weight: 700;
+  }
+
+  header .header-text p {
+    margin: 5px 0 10px 0;
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #FFE0BA;
+    color: #462106;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    width: fit-content;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: auto;
+    padding: 30px 20px;
+  }
+
+  section {
+    margin-bottom: 50px;
+  }
+
+  h2 {
+    border-bottom: 2px solid #462106;
+    padding-bottom: 8px;
+    font-weight: 700;
+  }
+
+  .skills div {
+    background: #462106;
+    height: 20px;
+    margin: 10px 0;
+    border-radius: 10px;
+    color: #FFE0BA;
+    text-align: right;
+    padding-right: 10px;
+    line-height: 20px;
+  }
+
+  .project {
+    background: #462106;
+    color: #FFE0BA;
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 10px;
+  }
+
+  a {
+    color: #FFE0BA;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: #462106;
+    color: #FFE0BA;
+  }
+
+  @media (max-width: 600px) {
+    header {
+      flex-direction: column;
+      height: auto;
+      align-items: center;
+    }
+    header img {
+      height: 150px;
+      width: auto;
+    }
+    header .header-text {
+      padding: 10px;
+      text-align: center;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <img src="profil.png" alt="Profilfoto Engelbert Schwank">
+  <div class="header-text">
+    <h1>Engelbert Schwank</h1>
+    <p>IT-Spezialist / Bewerbungsseite</p>
+    <a class="button" href="#">Lebenslauf herunterladen</a>
+  </div>
+</header>
+
+<div class="container">
+
+<section>
+  <h2>Über mich</h2>
+  <p>Ich bin IT-Spezialist mit Fokus auf moderne Webtechnologien. Ich liebe es, benutzerfreundliche Anwendungen zu entwickeln und kreative Lösungen zu finden.</p>
+</section>
+
+<section>
+  <h2>Fähigkeiten</h2>
+  <div class="skills">
+    <div style="width: 90%;">HTML / CSS</div>
+    <div style="width: 80%;">JavaScript / React</div>
+    <div style="width: 70%;">Python</div>
+    <div style="width: 60%;">Datenbanken / SQL</div>
+  </div>
+</section>
+
+<section>
+  <h2>Projekte</h2>
+  <div class="project">
+    <h3>Projekt 1 – Portfolio Website</h3>
+    <p>Moderne Portfolio-Website, komplett in HTML, CSS und JavaScript umgesetzt.</p>
+  </div>
+  <div class="project">
+    <h3>Projekt 2 – Web App</h3>
+    <p>Webanwendung zur Aufgabenverwaltung mit React und Firebase.</p>
+  </div>
+  <div class="project">
+    <h3>Projekt 3 – Datenanalyse</h3>
+    <p>Python-Skript zur Analyse von Verkaufsdaten und Visualisierung.</p>
+  </div>
+  <div class="project">
+    <h3>Projekt 4 – Blog System</h3>
+    <p>Content-Management-System mit Node.js und MongoDB.</p>
+  </div>
+  <div class="project">
+    <h3>Projekt 5 – Mobile App</h3>
+    <p>Cross-Plattform-App mit React Native zur Organisation von Terminen.</p>
+  </div>
+  <div class="project">
+    <h3>Projekt 6 – API Entwicklung</h3>
+    <p>Entwicklung einer REST API für ein internes Verwaltungssystem.</p>
+  </div>
+  <div class="project">
+    <h3>Projekt 7 – Automatisierung</h3>
+    <p>Automatisierung von wiederkehrenden Aufgaben mit Python-Skripten.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Zeugnisse</h2>
+  <div class="project">
+    <p><a href="#" target="_blank">Schul-/Studienzeugnisse ansehen oder herunterladen</a></p>
+  </div>
+</section>
+
+<section>
+  <h2>Dienstzeugnisse</h2>
+  <div class="project">
+    <p><a href="#" target="_blank">Dienstzeugnisse ansehen oder herunterladen</a></p>
+  </div>
+</section>
+
+<section>
+  <h2>Kontakt</h2>
+  <p>Email: <a href="mailto:engelbert.schwank@gmx.at">engelbert.schwank@gmx.at</a></p>
+  <p>LinkedIn: <a href="#" target="_blank">Profil-Link</a></p>
+  <p>GitHub: <a href="#" target="_blank">Profil-Link</a></p>
+</section>
+
+</div>
+
+<footer>
+  © 2026 Engelbert Schwank | Email: <a href="mailto:engelbert.schwank@gmx.at">engelbert.schwank@gmx.at</a>
+</footer>
+
+</body>
+</html>
