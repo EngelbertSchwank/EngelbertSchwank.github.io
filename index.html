@@ -12,28 +12,23 @@
     color: #462106;      /* dunkelbraun */
   }
 
-  /* Header mit Bild links, Text rechts */
+  /* Header mit Text links, Bild rechts */
   header {
     display: flex;
+    justify-content: space-between;
     width: 100%;
     background: #462106;  /* dunkelbraun */
     color: #FFE0BA;       /* hellbraun Schrift */
     height: 200px;        /* feste Header-Höhe */
     align-items: center;
-  }
-
-  header img {
-    height: 100%;         /* Bild füllt Header-Höhe */
-    width: auto;
-    object-fit: cover;    /* Bild proportional skalieren */
-    flex-shrink: 0;       /* Bild bleibt links */
+    padding: 0 20px;
   }
 
   header .header-text {
-    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    max-width: 60%;
   }
 
   header .header-text h1 {
@@ -46,7 +41,7 @@
     font-size: 18px;
   }
 
-  .button {
+  header .header-text .button {
     display: inline-block;
     padding: 10px 20px;
     background: #FFE0BA;
@@ -55,6 +50,13 @@
     border-radius: 6px;
     font-weight: bold;
     width: fit-content;
+  }
+
+  header img {
+    height: 160px;       /* feste Höhe */
+    width: auto;         /* proportional */
+    border-radius: 8px;  /* leicht abgerundete Ecken */
+    object-fit: cover;
   }
 
   .container {
@@ -112,14 +114,16 @@
       flex-direction: column;
       height: auto;
       align-items: center;
+      text-align: center;
+    }
+    header .header-text {
+      max-width: 100%;
+      padding: 10px 0;
     }
     header img {
       height: 150px;
       width: auto;
-    }
-    header .header-text {
-      padding: 10px;
-      text-align: center;
+      margin-top: 10px;
     }
   }
 </style>
@@ -127,12 +131,12 @@
 <body>
 
 <header>
-  <img src="Foto%20ESc.png" alt="Profilfoto Engelbert Schwank">
   <div class="header-text">
     <h1>Engelbert Schwank</h1>
     <p>IT-Spezialist / Bewerbungsseite</p>
     <a class="button" href="#">Lebenslauf herunterladen</a>
   </div>
+  <img src="foto-esc.png" alt="Profilfoto Engelbert Schwank">
 </header>
 
 <div class="container">
