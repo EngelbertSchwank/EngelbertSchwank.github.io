@@ -1,303 +1,312 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Engelbert Schwank - Bewerbungsseite</title>
 
 <style>
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #FFE0BA;
-  color: #462106;
+html{
+scroll-behavior:smooth;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  width: 100%;
-  background: #462106;
-  color: #FFE0BA;
-  padding: clamp(12px, 1.8vw, 18px) clamp(12px, 2vw, 18px);
-  box-sizing: border-box;
-  min-height: 0;
+body{
+margin:0;
+font-family:Arial;
+background:#FFE0BA;
+color:#462106;
 }
 
-header .header-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: clamp(2px, 0.6vw, 6px);
-  max-width: 78%;
+/* Navigation */
+
+nav{
+position:sticky;
+top:0;
+background:#462106;
+padding:10px;
+z-index:1000;
+text-align:center;
 }
 
-header .header-text h1 {
-  margin: 0;
-  font-size: clamp(34px, 3.8vw, 56px);
-  line-height: 1.0;
+nav a{
+color:#FFE0BA;
+margin:0 15px;
+font-weight:bold;
+text-decoration:none;
 }
 
-header .header-text .button {
-  display: inline-block;
-  padding: 5px 12px;
-  background: #FFE0BA;
-  color: #462106;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  width: fit-content;
-  margin: 0;
-  font-size: 13px;
-  transition: all 0.3s ease;
+nav a:hover{
+text-decoration:underline;
 }
 
-header .header-text .button:hover {
-  background: #fff1dd;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-  transform: translateY(-2px);
+/* Header */
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#462106;
+color:#FFE0BA;
+padding:20px;
 }
 
-header .header-image {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  flex: 0 0 auto;
-  height: 100%;
+header img{
+border-radius:8px;
+height:110px;
 }
 
-header .header-image img {
-  display: block;
-  height: 100%;
-  width: auto;
-  border-radius: 6px;
-  object-fit: cover;
+.button{
+background:#FFE0BA;
+color:#462106;
+padding:6px 14px;
+border-radius:6px;
+font-weight:bold;
+text-decoration:none;
+font-size:13px;
 }
 
-.container {
-  max-width: 900px;
-  margin: auto;
-  padding: 30px 20px;
-  box-sizing: border-box;
+/* Layout */
+
+.container{
+max-width:900px;
+margin:auto;
+padding:30px 20px;
 }
 
-section {
-  margin-bottom: 50px;
+section{
+margin-bottom:60px;
 }
 
-section:first-of-type p {
-  text-align: justify;
-  text-justify: inter-word;
+h2{
+border-bottom:2px solid #462106;
+padding-bottom:8px;
 }
 
-h2 {
-  border-bottom: 2px solid #462106;
-  padding-bottom: 8px;
+/* Skills */
+
+.skills div{
+background:#462106;
+height:20px;
+margin:10px 0;
+border-radius:10px;
+color:#FFE0BA;
+text-align:right;
+padding-right:10px;
+line-height:20px;
 }
 
-.skills div {
-  background: #462106;
-  height: 20px;
-  margin: 10px 0;
-  border-radius: 10px;
-  color: #FFE0BA;
-  text-align: right;
-  padding-right: 10px;
-  line-height: 20px;
-  box-sizing: border-box;
+/* Projekte */
+
+.project{
+background:#462106;
+color:#FFE0BA;
+padding:20px;
+margin-top:15px;
+border-radius:10px;
 }
 
-.project {
-  background: #462106;
-  color: #FFE0BA;
-  padding: 20px;
-  margin-top: 15px;
-  border-radius: 10px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+/* Dokumente */
+
+.documents{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+margin-top:20px;
 }
 
-.project:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 12px rgba(0,0,0,0.25);
+.doc-card{
+background:#462106;
+color:#FFE0BA;
+padding:20px;
+border-radius:10px;
+text-align:center;
+cursor:pointer;
+transition:0.3s;
 }
 
-a {
-  color: #FFE0BA;
-  text-decoration: none;
+.doc-card:hover{
+transform:translateY(-5px);
+box-shadow:0 6px 15px rgba(0,0,0,0.3);
 }
 
-a:hover {
-  text-decoration: underline;
+.doc-icon{
+font-size:40px;
+margin-bottom:10px;
 }
 
-ul {
-  padding-left: 20px;
+.doc-title{
+font-weight:bold;
+margin-bottom:10px;
 }
 
-li {
-  margin: 6px 0;
+/* PDF Viewer */
+
+.viewer{
+margin-top:30px;
+height:600px;
+border-radius:10px;
+overflow:hidden;
+display:none;
 }
 
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #462106;
-  color: #FFE0BA;
+.viewer iframe{
+width:100%;
+height:100%;
+border:none;
 }
 
-@media (max-width: 600px) {
+/* Footer */
 
-  header {
-    flex-direction: row;
-    align-items: stretch;
-    padding: 12px;
-  }
-
-  header .header-text {
-    max-width: 75%;
-    gap: 3px;
-  }
-
-  header .header-text h1 {
-    font-size: clamp(26px, 6vw, 34px);
-  }
-
+footer{
+text-align:center;
+padding:20px;
+background:#462106;
+color:#FFE0BA;
 }
 
 </style>
+
+<script>
+
+function openPDF(file){
+
+document.getElementById("pdfviewer").style.display="block";
+document.getElementById("pdfviewerframe").src=file;
+
+window.location='#pdfviewer';
+
+}
+
+</script>
+
 </head>
 
 <body>
 
+<nav>
+<a href="#about">Über mich</a>
+<a href="#skills">Fähigkeiten</a>
+<a href="#projects">Projekte</a>
+<a href="#zeugnisse">Zeugnisse</a>
+<a href="#contact">Kontakt</a>
+</nav>
+
 <header>
 
-<div class="header-text">
+<div>
 <h1>Engelbert Schwank</h1>
 <a class="button" href="#">Lebenslauf herunterladen</a>
 </div>
 
-<div class="header-image">
-<img src="Foto.png" alt="Foto von Engelbert Schwank">
-</div>
+<img src="Foto.png">
 
 </header>
 
 <div class="container">
 
-<section>
+<section id="about">
+
 <h2>Über mich</h2>
+
 <p>
-Verantwortung ist für mich nicht der Position geschuldet, sondern der Aufgabe, Organisationen nachhaltig weiterzuentwickeln –
-ohne den Blick für Menschen oder Zahlen zu verlieren. Dabei verbinde ich unternehmerisches Denken mit Hands-on-Mentalität.
+Verantwortung ist für mich nicht der Position geschuldet, sondern der Aufgabe,
+Organisationen nachhaltig weiterzuentwickeln – ohne den Blick für Menschen oder Zahlen
+zu verlieren. Dabei verbinde ich unternehmerisches Denken mit Hands-on-Mentalität.
 </p>
+
 </section>
 
-<section>
+<section id="skills">
+
 <h2>Fähigkeiten</h2>
 
 <div class="skills">
-<div style="width: 95%;">Projekt-, Budget- und Mitarbeiterverantwortung</div>
-<div style="width: 88%;">Organisationsentwicklung und Prozessoptimierung</div>
-<div style="width: 80%;">Qualitätsmanagement und Qualitätssysteme</div>
-<div style="width: 75%;">Digitalisierung</div>
+<div style="width:95%">Projekt-, Budget- und Mitarbeiterverantwortung</div>
+<div style="width:88%">Organisationsentwicklung und Prozessoptimierung</div>
+<div style="width:80%">Qualitätsmanagement und Qualitätssysteme</div>
+<div style="width:75%">Digitalisierung</div>
 </div>
 
 </section>
 
-<section>
+<section id="projects">
+
 <h2>Projekte</h2>
 
 <div class="project">
 <h3>Projekt 1 – Portfolio Website</h3>
-<p>Moderne Portfolio-Website, komplett in HTML, CSS und JavaScript umgesetzt.</p>
+<p>Moderne Portfolio-Website mit HTML und CSS.</p>
 </div>
 
 <div class="project">
 <h3>Projekt 2 – Web App</h3>
-<p>Webanwendung zur Aufgabenverwaltung mit React und Firebase.</p>
+<p>Webanwendung zur Aufgabenverwaltung.</p>
 </div>
 
 <div class="project">
 <h3>Projekt 3 – Datenanalyse</h3>
-<p>Python-Skript zur Analyse von Verkaufsdaten und Visualisierung.</p>
-</div>
-
-<div class="project">
-<h3>Projekt 4 – Blog System</h3>
-<p>Content-Management-System mit Node.js und MongoDB.</p>
-</div>
-
-<div class="project">
-<h3>Projekt 5 – Mobile App</h3>
-<p>Cross-Plattform-App mit React Native zur Organisation von Terminen.</p>
-</div>
-
-<div class="project">
-<h3>Projekt 6 – API Entwicklung</h3>
-<p>Entwicklung einer REST API für ein internes Verwaltungssystem.</p>
-</div>
-
-<div class="project">
-<h3>Projekt 7 – Automatisierung</h3>
-<p>Automatisierung von wiederkehrenden Aufgaben mit Python-Skripten.</p>
+<p>Python-Skript zur Analyse von Verkaufsdaten.</p>
 </div>
 
 </section>
 
-<section>
+<section id="zeugnisse">
+
 <h2>Zeugnisse</h2>
 
-<div class="project">
-<p><strong>Schul- und Studienzeugnisse</strong></p>
+<div class="documents">
 
-<ul>
-<li><a href="zeugnisse/zeugnis1.pdf" target="_blank">Zeugnis 1 herunterladen</a></li>
-<li><a href="zeugnisse/zeugnis2.pdf" target="_blank">Zeugnis 2 herunterladen</a></li>
-<li><a href="zeugnisse/zeugnis3.pdf" target="_blank">Zeugnis 3 herunterladen</a></li>
-<li><a href="zeugnisse/zeugnis4.pdf" target="_blank">Zeugnis 4 herunterladen</a></li>
-<li><a href="zeugnisse/zeugnis5.pdf" target="_blank">Zeugnis 5 herunterladen</a></li>
-<li><a href="zeugnisse/zeugnis6.pdf" target="_blank">Zeugnis 6 herunterladen</a></li>
-<li><a href="zeugnisse/zeugnis7.pdf" target="_blank">Zeugnis 7 herunterladen</a></li>
-<li><a href="zeugnisse/zeugnis8.pdf" target="_blank">Zeugnis 8 herunterladen</a></li>
-<li><a href="zeugnisse/zeugnis9.pdf" target="_blank">Zeugnis 9 herunterladen</a></li>
-<li><a href="zeugnisse/zeugnis10.pdf" target="_blank">Zeugnis 10 herunterladen</a></li>
-<li><a href="zeugnisse/zeugnis11.pdf" target="_blank">Zeugnis 11 herunterladen</a></li>
-<li><a href="zeugnisse/zeugnis12.pdf" target="_blank">Zeugnis 12 herunterladen</a></li>
-<li><a href="zeugnisse/zeugnis13.pdf" target="_blank">Zeugnis 13 herunterladen</a></li>
-<li><a href="zeugnisse/zeugnis14.pdf" target="_blank">Zeugnis 14 herunterladen</a></li>
-<li><a href="zeugnisse/zeugnis15.pdf" target="_blank">Zeugnis 15 herunterladen</a></li>
-</ul>
+<div class="doc-card" onclick="openPDF('zeugnisse/zeugnis1.pdf')">
+<div class="doc-icon">📄</div>
+<div class="doc-title">Zeugnis 1</div>
+</div>
 
+<div class="doc-card" onclick="openPDF('zeugnisse/zeugnis2.pdf')">
+<div class="doc-icon">📄</div>
+<div class="doc-title">Zeugnis 2</div>
+</div>
+
+<div class="doc-card" onclick="openPDF('zeugnisse/zeugnis3.pdf')">
+<div class="doc-icon">📄</div>
+<div class="doc-title">Zeugnis 3</div>
+</div>
+
+<div class="doc-card" onclick="openPDF('zeugnisse/zeugnis4.pdf')">
+<div class="doc-icon">📄</div>
+<div class="doc-title">Zeugnis 4</div>
+</div>
+
+<div class="doc-card" onclick="openPDF('zeugnisse/zeugnis5.pdf')">
+<div class="doc-icon">📄</div>
+<div class="doc-title">Zeugnis 5</div>
+</div>
+
+</div>
+
+<div id="pdfviewer" class="viewer">
+<iframe id="pdfviewerframe"></iframe>
 </div>
 
 </section>
 
-<section>
-<h2>Dienstzeugnisse</h2>
+<section id="contact">
 
-<div class="project">
-<ul>
-<li><a href="dienstzeugnisse/dienstzeugnis1.pdf" target="_blank">Dienstzeugnis 1 herunterladen</a></li>
-<li><a href="dienstzeugnisse/dienstzeugnis2.pdf" target="_blank">Dienstzeugnis 2 herunterladen</a></li>
-<li><a href="dienstzeugnisse/dienstzeugnis3.pdf" target="_blank">Dienstzeugnis 3 herunterladen</a></li>
-</ul>
-</div>
-
-</section>
-
-<section>
 <h2>Kontakt</h2>
+
 <p>Email: engelbert@gmx.at</p>
-<p>LinkedIn: <a href="#" target="_blank">Profil-Link</a></p>
-<p>GitHub: <a href="#" target="_blank">Profil-Link</a></p>
+<p>LinkedIn: Profil-Link</p>
+<p>GitHub: Profil-Link</p>
+
 </section>
 
 </div>
 
 <footer>
-© 2026 Engelbert Schwank | Email: engelbert@gmx.at
+
+© 2026 Engelbert Schwank
+
 </footer>
 
 </body>
