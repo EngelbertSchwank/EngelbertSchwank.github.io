@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -14,60 +16,66 @@ scroll-behavior:smooth;
 
 body{
 margin:0;
-font-family:Arial;
+font-family:Arial, sans-serif;
 background:#FFE0BA;
 color:#462106;
 }
 
-/* Navigation */
-
-nav{
-position:sticky;
-top:0;
-background:#462106;
-padding:10px;
-z-index:1000;
-text-align:center;
-}
-
-nav a{
-color:#FFE0BA;
-margin:0 15px;
-font-weight:bold;
-text-decoration:none;
-}
-
-nav a:hover{
-text-decoration:underline;
-}
-
-/* Header */
+/* HEADER */
 
 header{
-display:flex;
-justify-content:space-between;
-align-items:center;
 background:#462106;
 color:#FFE0BA;
 padding:20px;
+position:relative;
 }
 
-header img{
-border-radius:8px;
-height:110px;
+.header-name h1{
+margin:0;
+font-size:46px;
 }
 
-.button{
+.header-nav{
+margin-top:8px;
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+align-items:center;
+font-size:14px;
+}
+
+.header-nav a{
+color:#FFE0BA;
+text-decoration:none;
+font-weight:bold;
+}
+
+.header-nav a:hover{
+text-decoration:underline;
+}
+
+.cv-button{
 background:#FFE0BA;
-color:#462106;
+color:#462106 !important;
 padding:6px 14px;
 border-radius:6px;
 font-weight:bold;
-text-decoration:none;
-font-size:13px;
 }
 
-/* Layout */
+/* HEADER FOTO */
+
+.header-image{
+position:absolute;
+right:20px;
+top:20px;
+}
+
+.header-image img{
+height:110px;
+border-radius:8px;
+}
+
+/* LAYOUT */
 
 .container{
 max-width:900px;
@@ -84,7 +92,7 @@ border-bottom:2px solid #462106;
 padding-bottom:8px;
 }
 
-/* Skills */
+/* SKILLS */
 
 .skills div{
 background:#462106;
@@ -97,7 +105,7 @@ padding-right:10px;
 line-height:20px;
 }
 
-/* Projekte */
+/* PROJEKTE */
 
 .project{
 background:#462106;
@@ -107,7 +115,7 @@ margin-top:15px;
 border-radius:10px;
 }
 
-/* Dokumente */
+/* DOKUMENTE */
 
 .documents{
 display:grid;
@@ -128,7 +136,7 @@ transition:0.3s;
 
 .doc-card:hover{
 transform:translateY(-5px);
-box-shadow:0 6px 15px rgba(0,0,0,0.3);
+box-shadow:0 6px 15px rgba(0,0,0,0.25);
 }
 
 .doc-icon{
@@ -138,10 +146,9 @@ margin-bottom:10px;
 
 .doc-title{
 font-weight:bold;
-margin-bottom:10px;
 }
 
-/* PDF Viewer */
+/* PDF VIEWER */
 
 .viewer{
 margin-top:30px;
@@ -157,7 +164,7 @@ height:100%;
 border:none;
 }
 
-/* Footer */
+/* FOOTER */
 
 footer{
 text-align:center;
@@ -175,7 +182,7 @@ function openPDF(file){
 document.getElementById("pdfviewer").style.display="block";
 document.getElementById("pdfviewerframe").src=file;
 
-window.location='#pdfviewer';
+window.location="#pdfviewer";
 
 }
 
@@ -185,22 +192,29 @@ window.location='#pdfviewer';
 
 <body>
 
-<nav>
+<header>
+
+<div class="header-name">
+<h1>Engelbert Schwank</h1>
+</div>
+
+<div class="header-nav">
+
+<a class="cv-button" href="lebenslauf.pdf" target="_blank">
+Lebenslauf herunterladen
+</a>
+
 <a href="#about">Über mich</a>
 <a href="#skills">Fähigkeiten</a>
 <a href="#projects">Projekte</a>
 <a href="#zeugnisse">Zeugnisse</a>
 <a href="#contact">Kontakt</a>
-</nav>
 
-<header>
-
-<div>
-<h1>Engelbert Schwank</h1>
-<a class="button" href="#">Lebenslauf herunterladen</a>
 </div>
 
-<img src="Foto.png">
+<div class="header-image">
+<img src="Foto.png" alt="Foto von Engelbert Schwank">
+</div>
 
 </header>
 
@@ -223,10 +237,12 @@ zu verlieren. Dabei verbinde ich unternehmerisches Denken mit Hands-on-Mentalit�
 <h2>Fähigkeiten</h2>
 
 <div class="skills">
+
 <div style="width:95%">Projekt-, Budget- und Mitarbeiterverantwortung</div>
 <div style="width:88%">Organisationsentwicklung und Prozessoptimierung</div>
 <div style="width:80%">Qualitätsmanagement und Qualitätssysteme</div>
 <div style="width:75%">Digitalisierung</div>
+
 </div>
 
 </section>
@@ -237,7 +253,7 @@ zu verlieren. Dabei verbinde ich unternehmerisches Denken mit Hands-on-Mentalit�
 
 <div class="project">
 <h3>Projekt 1 – Portfolio Website</h3>
-<p>Moderne Portfolio-Website mit HTML und CSS.</p>
+<p>Moderne Portfolio-Website komplett in HTML und CSS umgesetzt.</p>
 </div>
 
 <div class="project">
