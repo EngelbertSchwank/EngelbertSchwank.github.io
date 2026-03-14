@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="de">
 
 <head>
@@ -92,24 +93,31 @@ border-bottom:2px solid #462106;
 padding-bottom:8px;
 }
 
-/* ÜBER MICH BLOCKSATZ */
+/* ÜBER MICH */
 
 #about p{
 text-align:justify;
-text-justify:inter-word;
 }
 
 /* SKILLS */
 
-.skills div{
-background:#462106;
-height:20px;
-margin:10px 0;
+.skill{
+background:#d7b08c;
 border-radius:10px;
+margin:12px 0;
+overflow:hidden;
+}
+
+.skill-bar{
+height:20px;
+width:0;
+background:#462106;
 color:#FFE0BA;
 text-align:right;
 padding-right:10px;
 line-height:20px;
+border-radius:10px;
+transition:width 2s;
 }
 
 /* PROJEKTE */
@@ -120,6 +128,22 @@ color:#FFE0BA;
 padding:20px;
 margin-top:15px;
 border-radius:10px;
+}
+
+/* ORDNER */
+
+details{
+margin-top:20px;
+}
+
+summary{
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+padding:10px;
+background:#462106;
+color:#FFE0BA;
+border-radius:6px;
 }
 
 /* DOKUMENTE */
@@ -153,22 +177,45 @@ margin-bottom:10px;
 
 .doc-title{
 font-weight:bold;
+margin-bottom:10px;
+}
+
+.download-btn{
+display:inline-block;
+margin-top:8px;
+background:#FFE0BA;
+color:#462106;
+padding:5px 10px;
+border-radius:5px;
+font-size:13px;
+text-decoration:none;
+font-weight:bold;
 }
 
 /* PDF VIEWER */
 
 .viewer{
 margin-top:30px;
-height:600px;
+height:650px;
 border-radius:10px;
 overflow:hidden;
 display:none;
+background:white;
 }
 
 .viewer iframe{
 width:100%;
 height:100%;
 border:none;
+}
+
+.viewer-header{
+background:#462106;
+color:#FFE0BA;
+padding:10px;
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
 
 /* FOOTER */
@@ -184,12 +231,25 @@ color:#FFE0BA;
 
 <script>
 
-function openPDF(file){
+function openPDF(file,title){
 
 document.getElementById("pdfviewer").style.display="block";
 document.getElementById("pdfviewerframe").src=file;
+document.getElementById("pdftitle").innerText=title;
+document.getElementById("pdfdownload").href=file;
 
 window.location="#pdfviewer";
+
+}
+
+window.onload=function(){
+
+document.querySelectorAll(".skill-bar").forEach(function(bar){
+
+let value=bar.getAttribute("data-width");
+bar.style.width=value;
+
+});
 
 }
 
@@ -211,16 +271,12 @@ window.location="#pdfviewer";
 Lebenslauf herunterladen
 </a>
 
-<a href="#about">Über mich</a>
-<a href="#skills">Fähigkeiten</a>
-<a href="#projects">Projekte</a>
-<a href="#zeugnisse">Zeugnisse</a>
-<a href="#contact">Kontakt</a>
+<a href="#about">Über mich</a> <a href="#skills">Fähigkeiten</a> <a href="#projects">Projekte</a> <a href="#zeugnisse">Zeugnisse</a> <a href="#contact">Kontakt</a>
 
 </div>
 
 <div class="header-image">
-<img src="Foto.png" alt="Foto von Engelbert Schwank">
+<img src="Foto.png" alt="Foto">
 </div>
 
 </header>
@@ -243,14 +299,10 @@ zu verlieren. Dabei verbinde ich unternehmerisches Denken mit Hands-on-Mentalit�
 
 <h2>Fähigkeiten</h2>
 
-<div class="skills">
-
-<div style="width:95%">Projekt-, Budget- und Mitarbeiterverantwortung</div>
-<div style="width:88%">Organisationsentwicklung und Prozessoptimierung</div>
-<div style="width:80%">Qualitätsmanagement und Qualitätssysteme</div>
-<div style="width:75%">Digitalisierung</div>
-
-</div>
+<div class="skill"><div class="skill-bar" data-width="95%">Projekt-, Budget- und Mitarbeiterverantwortung</div></div>
+<div class="skill"><div class="skill-bar" data-width="88%">Organisationsentwicklung und Prozessoptimierung</div></div>
+<div class="skill"><div class="skill-bar" data-width="80%">Qualitätsmanagement</div></div>
+<div class="skill"><div class="skill-bar" data-width="75%">Digitalisierung</div></div>
 
 </section>
 
@@ -273,84 +325,28 @@ zu verlieren. Dabei verbinde ich unternehmerisches Denken mit Hands-on-Mentalit�
 <p>Python-Skript zur Analyse von Verkaufsdaten.</p>
 </div>
 
-<div class="project">
-<h3>Projekt 4 – Blog System</h3>
-<p>Content-Management-System mit moderner Webtechnologie.</p>
-</div>
-
-<div class="project">
-<h3>Projekt 5 – Mobile App</h3>
-<p>Cross-Plattform-App zur Organisation von Terminen und Aufgaben.</p>
-</div>
-
-<div class="project">
-<h3>Projekt 6 – API Entwicklung</h3>
-<p>Entwicklung einer REST-API für ein internes Verwaltungssystem.</p>
-</div>
-
-<div class="project">
-<h3>Projekt 7 – Automatisierung</h3>
-<p>Automatisierung von wiederkehrenden Aufgaben durch Skripte.</p>
-</div>
-
 </section>
 
 <section id="zeugnisse">
 
 <h2>Zeugnisse</h2>
 
+<details>
+
+<summary>📂 Dienstzeugnis</summary>
+
 <div class="documents">
 
-<div class="doc-card" onclick="openPDF('zeugnisse/zeugnis1.pdf')">
+<div class="doc-card" onclick="openPDF('zeugnisse/zeugnis1.pdf','Dienstzeugnis 1')">
 <div class="doc-icon">📄</div>
-<div class="doc-title">Zeugnis 1</div>
+<div class="doc-title">Dienstzeugnis 1</div>
+<a class="download-btn" href="zeugnisse/zeugnis1.pdf" download>Download</a>
 </div>
 
-<div class="doc-card" onclick="openPDF('zeugnisse/zeugnis2.pdf')">
+<div class="doc-card" onclick="openPDF('zeugnisse/zeugnis2.pdf','Dienstzeugnis 2')">
 <div class="doc-icon">📄</div>
-<div class="doc-title">Zeugnis 2</div>
+<div class="doc-title">Dienstzeugnis 2</div>
+<a class="download-btn" href="zeugnisse/zeugnis2.pdf" download>Download</a>
 </div>
 
-<div class="doc-card" onclick="openPDF('zeugnisse/zeugnis3.pdf')">
-<div class="doc-icon">📄</div>
-<div class="doc-title">Zeugnis 3</div>
-</div>
-
-<div class="doc-card" onclick="openPDF('zeugnisse/zeugnis4.pdf')">
-<div class="doc-icon">📄</div>
-<div class="doc-title">Zeugnis 4</div>
-</div>
-
-<div class="doc-card" onclick="openPDF('zeugnisse/zeugnis5.pdf')">
-<div class="doc-icon">📄</div>
-<div class="doc-title">Zeugnis 5</div>
-</div>
-
-</div>
-
-<div id="pdfviewer" class="viewer">
-<iframe id="pdfviewerframe"></iframe>
-</div>
-
-</section>
-
-<section id="contact">
-
-<h2>Kontakt</h2>
-
-<p>Email: engelbert@gmx.at</p>
-<p>LinkedIn: Profil-Link</p>
-<p>GitHub: Profil-Link</p>
-
-</section>
-
-</div>
-
-<footer>
-
-© 2026 Engelbert Schwank
-
-</footer>
-
-</body>
-</html>
+<div class="doc-card" onclick="openPDF('zeugnisse/zeugnis3.pdf','Dienstzeugni
